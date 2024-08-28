@@ -1,0 +1,153 @@
+@use "../util/" as u;
+
+.card {
+  margin: u.rem(16) u.rem(32);
+  background-color: var(--white);
+  max-width: 742px;
+
+  @include u.breakpoint(medium) {
+    position: relative;
+    padding: u.rem(40);
+    margin: u.rem(128) auto;
+  }
+}
+
+.toast {
+  position: fixed;
+  padding: u.rem(24);
+  background-color: var(--gray-900);
+  color: var(--white);
+  border-radius: 12px;
+  margin-inline: auto;
+
+  @include u.breakpoint(medium) {
+    position: absolute;
+    top: -50px;
+    left: 23%;
+    max-width: u.rem(400);
+    align-items: center;
+    margin: auto;
+  }
+}
+
+//grid areas
+#header {
+  grid-area: header;
+}
+#fname {
+  grid-area: fname;
+}
+#lname {
+  grid-area: lname;
+}
+#emailAddress {
+  grid-area: emailAddress;
+}
+#querySection {
+  grid-area: querySection;
+  &:first-child {
+    margin-bottom: u.rem(16);
+  }
+}
+
+#queryTitle {
+  grid-area: queryTitle;
+}
+#enquiry {
+  grid-area: enquiry;
+}
+#request {
+  grid-area: request;
+}
+#consentSection {
+  grid-area: consentSection;
+}
+#messageArea {
+  grid-area: messageArea;
+}
+#btn {
+  grid-area: btn;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "fname"
+    "lname"
+    "emailAddress"
+    "querySection"
+    "messageArea"
+    "consentSection"
+    "btn";
+
+  &__heading {
+    margin-block-end: u.rem(8);
+  }
+
+  &__required {
+    color: var(--green-600);
+  }
+
+  &__consent {
+    display: block;
+  }
+
+  @include u.breakpoint(medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "fname lname"
+      "emailAddress emailAddress"
+      "querySection querySection"
+      "messageArea messageArea"
+      "consentSection consentSection"
+      "btn btn";
+  }
+}
+
+//query section
+.query {
+  > .query__type {
+    margin-block-end: 8px;
+  }
+  @include u.breakpoint(medium) {
+    display: block;
+  }
+
+  &__type label {
+    font-size: 1.125rem;
+  }
+
+  &__header {
+    display: block;
+  }
+
+  &__type {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: u.rem(16) u.rem(24);
+    border-radius: 8px;
+    border: 1px solid var(--gray-500);
+
+    &:first {
+      margin-block-end: 8px;
+    }
+
+    + .right {
+      @include u.breakpoint(medium) {
+        float: inline-end;
+      }
+    }
+
+    &:has(input:checked) {
+      background-color: var(--green-200);
+    }
+
+    @include u.breakpoint(medium) {
+      width: 48%;
+    }
+  }
+}

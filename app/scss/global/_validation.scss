@@ -1,0 +1,14 @@
+@use "../util/" as u;
+
+.error-msg {
+  color: var(--red-error);
+  border-color: 1px solid var(--red-error);
+}
+
+.hidden {
+  display: none;
+}
+
+.error-radio {
+  outline-color: 2px solid var(--red-error);
+}

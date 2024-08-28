@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/dist/styles.css" />
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        display: fixed;
+        bottom: 0;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div id="successMessage" class="toast hidden">
+        <h2>
+          <img src="/assets/images/icon-checkbox-check.svg" alt="" /> Message
+          Sent!
+        </h2>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+      <form id="form" class="form">
+        <h1 id="header">Contact Us</h1>
+        <div class="form__item" id="fname">
+          <label class="form__heading" for="firstName">
+            First Name <span class="form__required">*</span></label
+          >
+          <input
+            type="text"
+            name="first-name"
+            id="firstName"
+            aria-required="true"
+          />
+          <span class="error-msg hidden">This field is required</span>
+        </div>
+
+        <div class="form__item" id="lname">
+          <label class="form__heading" for="lastName">
+            Last Name <span class="form__required">*</span></label
+          >
+          <input
+            type="text"
+            name="last-name"
+            id="lastName"
+            aria-required="true"
+          />
+          <span class="error-msg hidden">This field is required</span>
+        </div>
+
+        <div class="form__item" id="emailAddress">
+          <label class="form__heading" for="email">
+            Email Address <span class="form__required">*</span></label
+          >
+          <input type="email" name="email" id="email" aria-required="true" />
+          <span class="error-msg hidden">This field is required</span>
+        </div>
+
+        <div class="form__item query" id="querySection">
+          <label class="form__heading query__header" for="query-type">
+            Query Type <span class="form__required">*</span></label
+          >
+
+          <label class="query__type left" for="enquiry">
+            <input
+              type="radio"
+              id="enquiry"
+              name="query-type"
+              aria-required="true"
+              value="general-enquiry"
+            />
+            General Enquiry</label
+          >
+
+          <label class="query__type right" for="request">
+            <input
+              type="radio"
+              id="request"
+              name="query-type"
+              aria-required="true"
+              value="support-request"
+            />
+            Support Request</label
+          >
+          <span class="qerror error-msg hidden"
+            >Please select a query type</span
+          >
+        </div>
+
+        <div class="form__item" id="messageArea">
+          <label class="form__heading" for="message"
+            >Message <span class="form__required">*</span></label
+          >
+          <textarea name="message" id="message" rows="8"></textarea>
+          <span class="error-msg hidden">This field is required</span>
+        </div>
+
+        <div class="form__item form__consent" id="consentSection">
+          <label for="consent">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              aria-required="true"
+            />
+            I consent to being contacted by the team
+            <span class="hidden form__required">*</span></label
+          >
+          <span class="error-msg hidden"
+            >To submit this form, please consent to be contacted</span
+          >
+        </div>
+
+        <button id="btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- To submit this form, please consent to being contacted Submit Message Sent!
+    Thanks for completing the form. We'll be in touch soon! -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <script src="/app/js/script.js"></script>
+  </body>
+</html>

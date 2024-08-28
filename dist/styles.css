@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+:root {
+  --gray-500: hsl(186, 15%, 59%);
+  --gray-900: hsl(187, 24%, 22%);
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red-error: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: var(--green-200);
+  height: 100vh;
+}
+
+h1 {
+  margin-block-end: 8px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+@media (min-width: 43.75em) {
+  h1 {
+    font-size: 32px;
+    margin: auto;
+  }
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-block-end: 8px;
+}
+
+form {
+  max-width: 736px;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+}
+
+input,
+textarea {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  border-radius: 8px;
+}
+
+input:active,
+input:focus,
+input:hover,
+textarea:active,
+textarea:focus,
+textarea:hover {
+  border: 1px solid var(--green-600);
+}
+
+textarea,
+input {
+  width: 100%;
+  border: 1px solid var(--gray-500);
+}
+
+input[type=radio],
+input[type=checkbox] {
+  width: 1rem;
+  margin-inline-end: 12px;
+  accent-color: var(--green-600);
+}
+
+button {
+  padding: 1rem 2.5rem;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: var(--green-600);
+  color: var(--white);
+}
+
+.error-msg {
+  color: var(--red-error);
+  border-color: 1px solid var(--red-error);
+}
+
+.hidden {
+  display: none;
+}
+
+.error-radio {
+  outline-color: 2px solid var(--red-error);
+}
+
+.card {
+  margin: 1rem 2rem;
+  background-color: var(--white);
+  max-width: 742px;
+}
+@media (min-width: 43.75em) {
+  .card {
+    position: relative;
+    padding: 2.5rem;
+    margin: 8rem auto;
+  }
+}
+
+.toast {
+  position: fixed;
+  padding: 1.5rem;
+  background-color: var(--gray-900);
+  color: var(--white);
+  border-radius: 12px;
+  margin-inline: auto;
+}
+@media (min-width: 43.75em) {
+  .toast {
+    position: absolute;
+    top: -50px;
+    left: 23%;
+    max-width: 25rem;
+    align-items: center;
+    margin: auto;
+  }
+}
+
+#header {
+  grid-area: header;
+}
+
+#fname {
+  grid-area: fname;
+}
+
+#lname {
+  grid-area: lname;
+}
+
+#emailAddress {
+  grid-area: emailAddress;
+}
+
+#querySection {
+  grid-area: querySection;
+}
+#querySection:first-child {
+  margin-bottom: 1rem;
+}
+
+#queryTitle {
+  grid-area: queryTitle;
+}
+
+#enquiry {
+  grid-area: enquiry;
+}
+
+#request {
+  grid-area: request;
+}
+
+#consentSection {
+  grid-area: consentSection;
+}
+
+#messageArea {
+  grid-area: messageArea;
+}
+
+#btn {
+  grid-area: btn;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "fname" "lname" "emailAddress" "querySection" "messageArea" "consentSection" "btn";
+}
+.form__heading {
+  margin-block-end: 0.5rem;
+}
+.form__required {
+  color: var(--green-600);
+}
+.form__consent {
+  display: block;
+}
+@media (min-width: 43.75em) {
+  .form {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header" "fname lname" "emailAddress emailAddress" "querySection querySection" "messageArea messageArea" "consentSection consentSection" "btn btn";
+  }
+}
+
+.query > .query__type {
+  margin-block-end: 8px;
+}
+@media (min-width: 43.75em) {
+  .query {
+    display: block;
+  }
+}
+.query__type label {
+  font-size: 1.125rem;
+}
+.query__header {
+  display: block;
+}
+.query__type {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-500);
+}
+.query__type:first {
+  margin-block-end: 8px;
+}
+@media (min-width: 43.75em) {
+  .query__type + .right {
+    float: inline-end;
+  }
+}
+.query__type:has(input:checked) {
+  background-color: var(--green-200);
+}
+@media (min-width: 43.75em) {
+  .query__type {
+    width: 48%;
+  }
+}/*# sourceMappingURL=styles.css.map */

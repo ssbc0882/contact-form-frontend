@@ -1,0 +1,83 @@
+@use "../util/" as u;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: var(--green-200);
+  height: 100vh;
+}
+
+h1 {
+  margin-block-end: 8px;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+  @include u.breakpoint(medium) {
+    font-size: 32px;
+    margin: auto;
+  }
+}
+
+h2 {
+  font-size: u.rem(18);
+  font-weight: bold;
+  margin-block-end: 8px;
+}
+
+form {
+  max-width: 736px;
+  padding: u.rem(24);
+  gap: u.rem(24);
+}
+
+label {
+  display: block;
+  font-size: u.rem(16);
+}
+
+input,
+textarea {
+  padding: u.rem(12) u.rem(24);
+  font-size: u.rem(18);
+  border-radius: 8px;
+}
+
+input:active,
+input:focus,
+input:hover,
+textarea:active,
+textarea:focus,
+textarea:hover {
+  border: 1px solid var(--green-600);
+}
+
+textarea,
+input {
+  width: 100%;
+  border: 1px solid var(--gray-500);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: u.rem(16);
+  margin-inline-end: 12px;
+  accent-color: var(--green-600);
+}
+
+input[type="checkbox"]:checked:after + {
+  background-color: var(--white);
+}
+button {
+  padding: u.rem(16) u.rem(40);
+  font-family: inherit;
+  font-size: u.rem(18);
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: var(--green-600);
+  color: var(--white);
+}
